@@ -1,6 +1,7 @@
-package com.online.base;
+package com.online.sanitySuite;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -13,6 +14,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import com.steadystate.css.parser.ParseException;
+
+import io.appium.java_client.android.AndroidDriver;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -34,29 +37,30 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.log4j.Logger;
 
 
-public abstract class PageBase {
+public class PageBase {
 
 	/**
 	 * The Driver.
 	 */
-	public Logger log = TestBase.log;
+	
     protected static long Wait_Time = 1000L;
 	protected static long delay_Time = 2000L;
-	protected static long LongDelay_Time = 5000L;
+	protected static long LongDelay_Time = 3000L;
 	public static Properties Cache=new Properties();
 	public static Properties properties=new Properties();
 	static InputStream inPropFile = null;
 	FileInputStream fisCache;
     OutputStream outPropFile;
 	Actions actionEvent;
-	protected WebDriver driver = null;
+	public AndroidDriver driver;
 
-
-	public PageBase(WebDriver driver) {
+	 Dimension size;
+	public PageBase(final AndroidDriver driver) {
 		this.driver = driver;
-		PageFactory.initElements(driver, this);
+	
 	}
 
+	
 	
 	 public WebDriverWait waitTo()
 		{
@@ -435,7 +439,7 @@ public abstract class PageBase {
 
 		public void iWillWaitToSee(WebElement element) {
 			try {
-			 new WebDriverWait(driver,200).until(ExpectedConditions.visibilityOf(element));
+				waitTo().until(ExpectedConditions.visibilityOf(element));
 			} catch (NoSuchElementException e) {
 				e.printStackTrace();
 			}
@@ -529,13 +533,51 @@ public abstract class PageBase {
 			return driver.getCurrentUrl();
 		}
 		
-		public static String currentdate(int days,String format) {
+		public String currentdate(int days,String format) {
 			DateTimeFormatter dtf = DateTimeFormatter.ofPattern(format);
-			LocalDate newYork = LocalDate.now(ZoneId.of("America/New_York"));
+			LocalDate newYork = LocalDate.now();
 			LocalDate b = newYork.minus(Period.ofDays(days));
 			String date = dtf.format(b);
 			return date;
 		}
+		
+		public String getmonthfromcurrent(int days,String format) {
+			DateTimeFormatter dtf = DateTimeFormatter.ofPattern(format);
+			LocalDate newYork = LocalDate.now();
+			LocalDate b = newYork.minus(Period.ofDays(days));
+			String date = dtf.format(b);
+			String[] arr=date.split("/");
+			String month=arr[0];
+			month=removeLeadingZeros(month);
+			return month;
+		}
+		
+		public String getdatefromcurrent(int days,String format) {
+			DateTimeFormatter dtf = DateTimeFormatter.ofPattern(format);
+			LocalDate newYork = LocalDate.now(ZoneId.of("Asia/Calcutta"));
+			LocalDate b = newYork.minus(Period.ofDays(days));
+			String date = dtf.format(b);
+			String[] arr=date.split("/");
+			String date1=arr[1];
+			date1=removeLeadingZeros(date1);
+			return date1;
+		}
+		
+		
+		public java.lang.String removeLeadingZeros( java.lang.String str ){
+			if (str == null){
+				return null;}
+				char[] chars = str.toCharArray();
+				int index = 0;
+				for (; index < str.length();index++)
+				{
+				if (chars[index] != '0'){
+				break;}
+				}
+				return (index == 0) ? str :str.substring(index);
+				}
+			
+		
 		
 		public static String currentdatefrommonth(int months,String format) {
 			DateTimeFormatter dtf = DateTimeFormatter.ofPattern(format);
@@ -670,4 +712,21 @@ public abstract class PageBase {
 		  wait(1);
 	}
 
+	public void swipingVertical() throws InterruptedException {
+		  //Get the size of screen.
+		  size = driver.manage().window().getSize();
+		  System.out.println(size);
+		   
+		  //Find swipe start and end point from screen's with and height.
+		  //Find starty point which is at bottom side of screen.
+		  int starty = (int) (size.height * 0.80);
+		  //Find endy point which is at top side of screen.
+		  int endy = (int) (size.height * 0.20);
+		  //Find horizontal point where you wants to swipe. It is in middle of screen width.
+		  int startx = size.width / 2;
+		  System.out.println("starty = " + starty + " ,endy = " + endy + " , startx = " + startx);
+         //Swipe from Top to Bottom.
+		  driver.swipe(startx, starty, startx, endy, 10000);
+		  Thread.sleep(4000);
+		 }
 }

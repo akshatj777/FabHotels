@@ -343,6 +343,13 @@
 	</profiles>
 
 	<dependencies>
+	
+	<dependency>
+    <groupId>io.appium</groupId>
+    <artifactId>java-client</artifactId>
+    <version>4.1.2</version>
+</dependency>
+
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-firefox-driver</artifactId>
@@ -361,8 +368,13 @@
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>3.4.0</version>
+			<version>3.6.0</version>
 		</dependency>
+		<dependency>
+    <groupId>com.google.guava</groupId>
+    <artifactId>guava</artifactId>
+    <version>21.0</version>
+</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -419,7 +431,7 @@
 
 		<!-- Default suites -->
 		<sanitySuiteFile>${project.basedir}/test_suites/sanity_testcases.xml</sanitySuiteFile>
-		<regressionSuiteFile>${project.basedir}/test_suites/regression_testcases.xml</regressionSuiteFile>
+<!--  		<regressionSuiteFile>${project.basedir}/test_suites/regression_testcases.xml</regressionSuiteFile> -->
 
 		<!-- Default suite files if not being specified from mvn command line -->
 		<defaultSuiteFiles>${sanitySuiteFile}</defaultSuiteFiles>
