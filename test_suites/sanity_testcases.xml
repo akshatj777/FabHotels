@@ -5,7 +5,7 @@
   <test name="Test Suite 1" preserve-order="true" verbose="4" >
    <parameter name="EPSideMenuPeople" value="People"/>
     <classes>
-           <class name="com.online.sanitySuite.TestCase_1_Fabhotels" />
+           <class name="com.online.sanitySuite.TestCase_2_Fabhotels" />
      
     </classes>
   </test>

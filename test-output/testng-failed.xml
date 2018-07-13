@@ -3,21 +3,16 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.online.sanitySuite.TestCase_1_Enterprise_side_menu">
+      <class name="com.online.sanitySuite.TestCase_2_Fabhotels">
         <methods>
-          <include name="click_pay_hotel_button"/>
-          <include name="click_pay_hotel_tab"/>
-          <include name="enter_coupon_code"/>
-          <include name="close_otp_pop_up"/>
-          <include name="enter_details"/>
-          <include name="click_on_back_button"/>
-          <include name="click_on_deny_on_sms_pop_up"/>
+          <include name="select_1_guest"/>
           <include name="click_pay_button"/>
-          <include name="click_apply_button"/>
-          <include name="click_on_apply_coupon"/>
-          <include name="verify_amount_on_all_tabs"/>
+          <include name="select_guests"/>
+          <include name="tearDown"/>
+          <include name="verify_date_format"/>
+          <include name="click_select_room"/>
         </methods>
-      </class> <!-- com.online.sanitySuite.TestCase_1_Enterprise_side_menu -->
+      </class> <!-- com.online.sanitySuite.TestCase_2_Fabhotels -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

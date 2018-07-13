@@ -1,5 +1,8 @@
 package com.online.sanitySuite;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.AssertJUnit;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -42,7 +45,7 @@ public class TestCase_1_Fabhotels {
 
 	//Syn_consumer_app consumer;
 	
-	@Test(priority=1)
+	@BeforeClass
 	public void setup() throws IOException, InterruptedException{
 		            config = new Properties();
 					String config_fileName = "config.properties";
@@ -222,7 +225,7 @@ public class TestCase_1_Fabhotels {
 			base.iWillWaitToSee(driver.findElement(By.xpath("//android.widget.HorizontalScrollView[contains(@resource-id,'tabLayout')]/android.support.v7.app.a$c[@index='"+i+"']")));
 			base.clickElement(driver.findElement(By.xpath("//android.widget.HorizontalScrollView[contains(@resource-id,'tabLayout')]/android.support.v7.app.a$c[@index='"+i+"']")));
 			String payment=base.getTextForElement(driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'btnPayNow')]")));
-			Assert.assertTrue(payment.contains("1,549"));
+			AssertJUnit.assertTrue(payment.contains("1,549"));
 			Assert.assertNotEquals(payment, "1,204");
 		}
 		
