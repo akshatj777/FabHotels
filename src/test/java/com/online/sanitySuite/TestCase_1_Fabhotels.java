@@ -128,7 +128,11 @@ public class TestCase_1_Fabhotels {
 		PageBase base=new PageBase(driver);
 		base.delay();
 		base.delay();
-		
+		base.iWillWaitToSee(driver.findElement(By.id("tv_title")));
+		List<WebElement> element=driver.findElements(By.id("tv_title"));
+		for(WebElement ekl:element){
+			System.out.println(ekl.getText());
+		}
 		base.clickSingleElementFromList(By.className("android.widget.TextView"),"STAYFAB applied!");
 	
 //		base.iWillWaitToSee(driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'tv_discount_text')]")));
