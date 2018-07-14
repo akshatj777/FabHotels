@@ -158,7 +158,7 @@ public class TestCase_2_Fabhotels extends TestBase {
  }
  
  
-	@AfterSuite
+	@AfterClass
 	public void tearDown() {
 		quitDriver();
 	}

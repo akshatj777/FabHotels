@@ -56,7 +56,7 @@ public class TestCase_1_Fabhotels {
 
 	//Syn_consumer_app consumer;
 	
-	@BeforeSuite
+	@BeforeClass
 	public void setup() throws IOException, InterruptedException{
 		            config = new Properties();
 					String config_fileName = "config.properties";
@@ -245,7 +245,7 @@ public class TestCase_1_Fabhotels {
 		base.longDelay();
 		}
 	
-	@AfterSuite
+	@AfterClass
 	public void quitdriver()
 	{
 		driver.quit();

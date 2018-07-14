@@ -5,7 +5,7 @@
 	<artifactId>MyWebApp</artifactId>
 	<version>0.0.2-SNAPSHOT</version>
 	<name>OnlineExecutable</name>
-	<description>Executable online framework using Java + Selenium Web driver + TestNG ...created by Akshat Jain</description>
+	<description>FabHotel online framework using Java + Selenium Web driver + TestNG ...created by Akshat Jain</description>
 
 	<profiles>
 
@@ -431,7 +431,8 @@
 
 		<!-- Default suites -->
 		<sanitySuiteFile>${project.basedir}/test_suites/sanity_testcases.xml</sanitySuiteFile>
-  		<regressionSuiteFile>${project.basedir}/test_suites/regression_testcases.xml</regressionSuiteFile>
+  	<!-- 	<regressionSuiteFile>${project.basedir}/test_suites/regression_testcases.xml</regressionSuiteFile> -->
+  	
 
 		<!-- Default suite files if not being specified from mvn command line -->
 		<defaultSuiteFiles>${sanitySuiteFile}</defaultSuiteFiles>
@@ -441,10 +442,10 @@
 	</properties>
 
 
-	<url>https://github.com/shirishk/Java-Selenium-TestNG-Automation-Framework</url>
+	<url>https://github.com/akshatj777/FabHotels</url>
 	<organization>
-		<name>Shirish Kawatkar</name>
-		<url>http://shirish.com/</url>
+		<name>Akshat Jain</name>
+		<url>http://akshat.com/</url>
 	</organization>
 	<ciManagement>
 		<system>Travis CI</system>
