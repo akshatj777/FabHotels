@@ -1,34 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Synerzip-TestAutomation-SanitySuite]">
-  <test name="Test Suite 1(failed)">
-    <parameter name="EPSideMenuPeople" value="People"/>
-    <classes>
-      <class name="com.online.sanitySuite.TestCase_1_Fabhotels">
-        <methods>
-          <include name="click_pay_hotel_tab"/>
-          <include name="click_on_deny_on_sms_pop_up"/>
-          <include name="close_otp_pop_up"/>
-          <include name="setup"/>
-          <include name="verify_amount_on_all_tabs"/>
-          <include name="quitdriver"/>
-          <include name="click_on_back_button"/>
-        </methods>
-      </class> <!-- com.online.sanitySuite.TestCase_1_Fabhotels -->
-    </classes>
-  </test> <!-- Test Suite 1(failed) -->
-  <test name="Test Suite 2(failed)">
-    <parameter name="EPSideMenuPeople" value="People"/>
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
     <classes>
       <class name="com.online.sanitySuite.TestCase_2_Fabhotels">
         <methods>
           <include name="tearDown"/>
-          <include name="click_pay_button"/>
           <include name="verify_prices"/>
-          <include name="select_guests"/>
-          <include name="click_select_room"/>
         </methods>
       </class> <!-- com.online.sanitySuite.TestCase_2_Fabhotels -->
     </classes>
-  </test> <!-- Test Suite 2(failed) -->
-</suite> <!-- Failed suite [Synerzip-TestAutomation-SanitySuite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

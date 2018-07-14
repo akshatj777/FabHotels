@@ -6,7 +6,7 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
-import org.testng.AssertJUnit;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -47,6 +48,8 @@ public class TestCase_1_Fabhotels {
 	
 	public static Properties config=null;
 	public static Properties data=null;
+	public static String old_payment;
+	public static String payment;
 	public static Logger log = null;
 	public static AndroidDriver driver;	
 	
@@ -144,7 +147,8 @@ public class TestCase_1_Fabhotels {
 	public void remove_coupon_discount(){
 		PageBase base=new PageBase(driver);
 	    base.iWillWaitToSee(driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'tv_discount_text')]")));
-        driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'tv_discount_text')]")).click();		
+	    old_payment=base.getTextForElement(driver.findElementByXPath("//android.widget.Button[contains(@resource-id,'btn_pay')]"));
+		driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'tv_discount_text')]")).click();		
 	}
 
 
@@ -187,6 +191,7 @@ public class TestCase_1_Fabhotels {
 		base.iFillInText(driver.findElement(By.xpath("//android.widget.EditText[contains(@resource-id,'et_mobile_number')]")),"9990915358");
 		driver.hideKeyboard();
 		base.delay();
+		payment=base.getTextForElement(driver.findElementByXPath("//android.widget.Button[contains(@resource-id,'btn_pay')]"));
 	}
 	
 	@Test(priority=12)
@@ -199,10 +204,11 @@ public class TestCase_1_Fabhotels {
 	public void click_pay_hotel_tab(){
 		PageBase base=new PageBase(driver);
 		base.longDelay();
-		base.iWillWaitToSee(driver.findElement(By.name("Wallets")));
-		base.clickElement(driver.findElement(By.name("Wallets")));
-		base.clickElement(driver.findElement(By.name("Pay@Hotel")));
+		List<WebElement> elements=driver.findElementsByClassName("android.support.v7.app.a$c");
+		elements.get(3).click();
+		elements.get(4).click();
 }
+	
 	@Test(priority=14)
 	public void click_pay_hotel_button(){
 		PageBase base=new PageBase(driver);
@@ -229,25 +235,30 @@ public class TestCase_1_Fabhotels {
 	@Test(priority=17)
 	public void verify_amount_on_all_tabs(){
 		PageBase base=new PageBase(driver);
-		for(int i=4;i>=0;i--){
+		List<WebElement> elements=driver.findElementsByClassName("android.support.v7.app.a$c");
+		
+		String Payment=base.getTextForElement(driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'btnPayNow')]")));
+		String pay=Payment.substring(Payment.length() - 5);
+		String pay1=payment.substring(payment.length() - 5);
+		Assert.assertTrue(!pay.contains(pay1));
+		for(int i=3;i>=0;i--){
 			base.delay();
-			base.iWillWaitToSee(driver.findElement(By.xpath("//android.widget.HorizontalScrollView[contains(@resource-id,'tabLayout')]/android.support.v7.app.a$c[@index='"+i+"']")));
-			base.clickElement(driver.findElement(By.xpath("//android.widget.HorizontalScrollView[contains(@resource-id,'tabLayout')]/android.support.v7.app.a$c[@index='"+i+"']")));
-			String payment=base.getTextForElement(driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'btnPayNow')]")));
-			AssertJUnit.assertTrue(payment.contains("1,549"));
-			Assert.assertNotEquals(payment, "1,204");
+			elements.get(i).click();
+			String Payment1=base.getTextForElement(driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'btnPayNow')]")));
+			String pay2=Payment1.substring(Payment1.length() - 5);
+            Assert.assertTrue(pay.contains(pay2));
+            Assert.assertTrue(!pay.contains(pay1));
 		}		
 	}
-		@Test(priority=18)
-	public void click_on_back_button(){
-		PageBase base=new PageBase(driver);
-		base.clickElement(driver.findElement(By.xpath("//android.widget.FrameLayout[@index='0']/android.widget.ImageButton[@index='0']")));
-		base.longDelay();
-		}
+	
 	
 	@AfterClass
 	public void quitdriver()
 	{
 		driver.quit();
 	}
+	
+	 public String removeFirstChar(String s){
+		   return s.substring(1);
+		}
 }

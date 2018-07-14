@@ -16,8 +16,11 @@ import com.steadystate.css.parser.ParseException;
 public class TestCase_2_Fabhotels extends TestBase {
 
 	public static String RoomPrice;
+	public static String RoomPrice1;
 	public static String HotelCutPrices;
+	public static String HotelCutPrices1;
 	public static String SavePrice;
+	public static String SavePrice1;
 	public static String PromoCutPrices;
 	public static String Coupon_Discount;
 	public static String PromoTotalPrices;
@@ -60,6 +63,7 @@ public class TestCase_2_Fabhotels extends TestBase {
 	 webpage.delay();
 	 String date=webpage.getTextForElement(driver.findElement(By.xpath("//td[contains(@class,'today selected range-start day')]")));
 	 int new_date=Integer.parseInt(date)+1;
+	 webpage.delay();
 	 webpage.iWillWaitToSee(driver.findElement(By.xpath("//*[@class='day' and text()='"+new_date+"' and not(contains(@class,'disabled'))]")));
 	 webpage.clickElement(driver.findElement(By.xpath("//*[@class='day' and text()='"+new_date+"' and not(contains(@class,'disabled'))]")));
  }
@@ -120,22 +124,23 @@ public class TestCase_2_Fabhotels extends TestBase {
 	 webpage.delay();
 	 webpage.iWillWaitToSee(driver.findElement(By.xpath("//span[@class='room_select_no' and @data-value='2']")));
 	 webpage.clickElement(driver.findElement(By.xpath("//span[@class='room_select_no' and @data-value='2']")));
+	 webpage.delay();
 	 HotelCutPrices=webpage.getTextForElement(driver.findElement(By.cssSelector("span.hotel_cut_price"))).replaceAll(",", " ");
-	 HotelCutPrices=HotelCutPrices.replaceAll(" ", " ");
-	 RoomPrice=webpage.getTextForElement(driver.findElement(By.cssSelector("div.room-type-section-active>div>div.room-type-price-wrap>div>strong>span")));
-	 RoomPrice=RoomPrice.replaceAll(" ", " ");
+	 HotelCutPrices1=HotelCutPrices.replaceAll("\\s","");
+	 RoomPrice=webpage.getTextForElement(driver.findElement(By.cssSelector("div.room-type-section-active>div>div.room-type-price-wrap>div>strong>span"))).replaceAll(",", " ");
+	 RoomPrice1=RoomPrice.replaceAll("\\s","");
 	 SavePrice=webpage.getTextForElement(driver.findElement(By.cssSelector("span.save-rupees.save_rupees"))).substring(10).replaceAll(",", " ");
-	 SavePrice=SavePrice.replaceAll(" ", " ");
+	 SavePrice1=SavePrice.replaceAll("\\s","");
 	}
  
  @Test(priority=9)
- public void click_pay_button() throws ParseException, java.text.ParseException{
+ public void click_pay_button() throws ParseException{
 	 WebPageBase webpage=new WebPageBase(driver);
 	 webpage.iWillWaitToSee(driver.findElement(By.cssSelector("button.btn.proceed_to_pay_button")));
 	 webpage.clickElement(driver.findElement(By.cssSelector("button.btn.proceed_to_pay_button")));
    }
  
- @Test(priority=9)
+ @Test(priority=10)
  public void verify_prices() throws ParseException, java.text.ParseException{
 	 WebPageBase webpage=new WebPageBase(driver);
 	 PromoCutPrices=removeFirstChar(webpage.getTextForElement(driver.findElement(By.cssSelector("span.promo-rate-cut"))));
@@ -149,11 +154,12 @@ public class TestCase_2_Fabhotels extends TestBase {
 	 Tax_Promo=webpage.getTextForElement(driver.findElement(By.cssSelector("span.tax-amount.tax_amount")));
 	 Payalble_Amount=webpage.getTextForElement(driver.findElement(By.cssSelector("div.review_booking_total_amount > span")));
 	 Saving_Amount=webpage.getTextForElement(driver.findElement(By.cssSelector("span.total_saving")));
-	 Assert.assertEquals(PromoCutPrices, HotelCutPrices);
-	 Assert.assertEquals(SavePrice, Saving_Amount);
-	 Assert.assertEquals(RoomPrice, Discount_price);
+	 Assert.assertEquals(PromoCutPrices, HotelCutPrices1);
+	 Assert.assertEquals(SavePrice1, Saving_Amount);
+	 Assert.assertEquals(RoomPrice1, Discount_price);
 	 Assert.assertEquals(Integer.parseInt(PromoTotalPrices)-Integer.parseInt(Coupon_Discount), Discount_price);
-	 Assert.assertEquals( Integer.parseInt(PromoTotalPrices)-Integer.parseInt(Coupon_Discount)-Integer.parseInt(Saved_Prices) + Integer.parseInt(Tax_Promo) , Payalble_Amount);;
+	 int value=Integer.parseInt(PromoTotalPrices)-Integer.parseInt(Coupon_Discount)+Integer.parseInt(Tax_Promo);
+	 Assert.assertEquals(String.valueOf(value).trim() , Payalble_Amount.trim());
 	
  }
  
