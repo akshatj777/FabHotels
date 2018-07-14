@@ -169,10 +169,7 @@ public abstract class TestBase {
 		wait=new WebDriverWait(driver, 120);
 	}
 	
-	@AfterSuite
-	public void tearDown() {
-		quitDriver();
-	}
+
 
 	/**
 	 * Read Properties.
