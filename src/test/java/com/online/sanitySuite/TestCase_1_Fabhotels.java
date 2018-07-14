@@ -66,7 +66,7 @@ public class TestCase_1_Fabhotels {
 		            DesiredCapabilities capabilities = new DesiredCapabilities();
 					capabilities.setCapability("platformName", config.getProperty("platformName"));
 					capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, config.getProperty("deviceName"));
-					capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "6.0");
+					capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, config.getProperty("deviceVersion"));
 				    capabilities.setCapability("appPackage", config.getProperty("app-package"));
 					capabilities.setCapability("appActivity", config.getProperty("app-activity"));
 					
