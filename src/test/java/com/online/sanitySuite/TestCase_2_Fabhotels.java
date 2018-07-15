@@ -47,7 +47,7 @@ public class TestCase_2_Fabhotels extends TestBase {
 	 webpage.delay();
 	 webpage.clickElement(driver.findElement(By.xpath("//*[@id='autocomplete-location']")));
 	 webpage.iFillInText(driver.findElement(By.xpath("//*[@id='autocomplete-location']")),"Bangalore, Karnataka, India");
-	 webpage.delay();
+	 webpage.longDelay();
 	 webpage.clickElement(driver.findElement(By.cssSelector("svg.icon.search-icon")));
 	 webpage.delay();
 
@@ -96,22 +96,14 @@ public class TestCase_2_Fabhotels extends TestBase {
 		}
 		webpage.clickSingleElementFromList(By.xpath("//td[@class='day']"), date1);
 	}
-	 	
-//	 webpage.clickElement(driver.findElement(By.cssSelector("td.today.day")));
-//	 webpage.delay();
-//	 String date=webpage.getTextForElement(driver.findElement(By.xpath("//td[contains(@class,'today selected range-start day')]")));
-//	 int new_date=Integer.parseInt(date)+1;
-//	 webpage.delay();
-//	 webpage.iWillWaitToSee(driver.findElement(By.xpath("//*[@class='day' and text()='"+new_date+"' and not(contains(@class,'disabled'))]")));
-//	 webpage.clickElement(driver.findElement(By.xpath("//*[@class='day' and text()='"+new_date+"' and not(contains(@class,'disabled'))]")));
- }
+	 	 }
  
  @Test(priority=4)
  public void verify_date_format() throws ParseException, java.text.ParseException{
 	 WebPageBase webpage=new WebPageBase(driver);
 	 webpage.delay();
 	 webpage.clickElement(driver.findElement(By.xpath("//span[@data-val='1']")));
-	 webpage.delay();
+	 webpage.longDelay();
 	 String date=driver.findElement(By.cssSelector("div.searchCheckInBox.date-selected")).getText();
 	 webpage.validateDateFormat("dd MMM yyyy",date);
 	 String date1=driver.findElement(By.cssSelector("div.searchCheckOutBox.date-selected")).getText();

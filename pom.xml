@@ -431,7 +431,7 @@
 
 		<!-- Default suites -->
 		<sanitySuiteFile>${project.basedir}/test_suites/sanity_testcases.xml</sanitySuiteFile>
-  	<!-- 	<regressionSuiteFile>${project.basedir}/test_suites/regression_testcases.xml</regressionSuiteFile> -->
+  	 	<sanitySuiteFile>${project.basedir}/test_suites/regression_testcases.xml</sanitySuiteFile> 
   	
 
 		<!-- Default suite files if not being specified from mvn command line -->
