@@ -1,161 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="10" passed="9">
+<testng-results skipped="0" failed="0" ignored="0" total="10" passed="10">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="83422" started-at="2018-07-14T20:02:28Z" finished-at="2018-07-14T20:03:51Z">
+  <suite name="Default suite" duration-ms="116636" started-at="2018-07-15T12:14:20Z" finished-at="2018-07-15T12:16:17Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="83422" started-at="2018-07-14T20:02:28Z" finished-at="2018-07-14T20:03:51Z">
+    <test name="Default test" duration-ms="116636" started-at="2018-07-15T12:14:20Z" finished-at="2018-07-15T12:16:17Z">
       <class name="com.online.sanitySuite.TestCase_2_Fabhotels">
-        <test-method status="PASS" signature="setup()[pri:1, instance:com.online.sanitySuite.TestCase_2_Fabhotels@19cbee5]" name="setup" duration-ms="15814" started-at="2018-07-14T13:02:28Z" finished-at="2018-07-14T13:02:44Z">
+        <test-method status="PASS" signature="setup()[pri:1, instance:com.online.sanitySuite.TestCase_2_Fabhotels@19cbee5]" name="setup" duration-ms="22456" started-at="2018-07-15T05:14:20Z" finished-at="2018-07-15T05:14:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="enter_city()[pri:2, instance:com.online.sanitySuite.TestCase_2_Fabhotels@19cbee5]" name="enter_city" duration-ms="8448" started-at="2018-07-14T13:02:44Z" finished-at="2018-07-14T13:02:52Z">
+        <test-method status="PASS" signature="enter_city()[pri:2, instance:com.online.sanitySuite.TestCase_2_Fabhotels@19cbee5]" name="enter_city" duration-ms="9394" started-at="2018-07-15T05:14:43Z" finished-at="2018-07-15T05:14:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- enter_city -->
-        <test-method status="PASS" signature="select_date()[pri:3, instance:com.online.sanitySuite.TestCase_2_Fabhotels@19cbee5]" name="select_date" duration-ms="7006" started-at="2018-07-14T13:02:52Z" finished-at="2018-07-14T13:02:59Z">
+        <test-method status="PASS" signature="select_date()[pri:3, instance:com.online.sanitySuite.TestCase_2_Fabhotels@19cbee5]" name="select_date" duration-ms="10997" started-at="2018-07-15T05:14:52Z" finished-at="2018-07-15T05:15:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- select_date -->
-        <test-method status="PASS" signature="verify_date_format()[pri:4, instance:com.online.sanitySuite.TestCase_2_Fabhotels@19cbee5]" name="verify_date_format" duration-ms="4506" started-at="2018-07-14T13:02:59Z" finished-at="2018-07-14T13:03:04Z">
+        <test-method status="PASS" signature="verify_date_format()[pri:4, instance:com.online.sanitySuite.TestCase_2_Fabhotels@19cbee5]" name="verify_date_format" duration-ms="5451" started-at="2018-07-15T05:15:03Z" finished-at="2018-07-15T05:15:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_date_format -->
-        <test-method status="PASS" signature="click_search_button()[pri:5, instance:com.online.sanitySuite.TestCase_2_Fabhotels@19cbee5]" name="click_search_button" duration-ms="5904" started-at="2018-07-14T13:03:04Z" finished-at="2018-07-14T13:03:09Z">
+        <test-method status="PASS" signature="click_search_button()[pri:5, instance:com.online.sanitySuite.TestCase_2_Fabhotels@19cbee5]" name="click_search_button" duration-ms="11246" started-at="2018-07-15T05:15:09Z" finished-at="2018-07-15T05:15:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- click_search_button -->
-        <test-method status="PASS" signature="click_first_hotel_link()[pri:6, instance:com.online.sanitySuite.TestCase_2_Fabhotels@19cbee5]" name="click_first_hotel_link" duration-ms="10094" started-at="2018-07-14T13:03:09Z" finished-at="2018-07-14T13:03:20Z">
+        <test-method status="PASS" signature="click_first_hotel_link()[pri:6, instance:com.online.sanitySuite.TestCase_2_Fabhotels@19cbee5]" name="click_first_hotel_link" duration-ms="4139" started-at="2018-07-15T05:15:20Z" finished-at="2018-07-15T05:15:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- click_first_hotel_link -->
-        <test-method status="PASS" signature="click_select_room()[pri:7, instance:com.online.sanitySuite.TestCase_2_Fabhotels@19cbee5]" name="click_select_room" duration-ms="3428" started-at="2018-07-14T13:03:20Z" finished-at="2018-07-14T13:03:23Z">
+        <test-method status="PASS" signature="click_select_room()[pri:7, instance:com.online.sanitySuite.TestCase_2_Fabhotels@19cbee5]" name="click_select_room" duration-ms="16782" started-at="2018-07-15T05:15:24Z" finished-at="2018-07-15T05:15:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- click_select_room -->
-        <test-method status="PASS" signature="select_guests()[pri:8, instance:com.online.sanitySuite.TestCase_2_Fabhotels@19cbee5]" name="select_guests" duration-ms="10254" started-at="2018-07-14T13:03:23Z" finished-at="2018-07-14T13:03:33Z">
+        <test-method status="PASS" signature="select_guests()[pri:8, instance:com.online.sanitySuite.TestCase_2_Fabhotels@19cbee5]" name="select_guests" duration-ms="22199" started-at="2018-07-15T05:15:41Z" finished-at="2018-07-15T05:16:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- select_guests -->
-        <test-method status="PASS" signature="click_pay_button()[pri:9, instance:com.online.sanitySuite.TestCase_2_Fabhotels@19cbee5]" name="click_pay_button" duration-ms="305" started-at="2018-07-14T13:03:33Z" finished-at="2018-07-14T13:03:34Z">
+        <test-method status="PASS" signature="click_pay_button()[pri:9, instance:com.online.sanitySuite.TestCase_2_Fabhotels@19cbee5]" name="click_pay_button" duration-ms="2478" started-at="2018-07-15T05:16:03Z" finished-at="2018-07-15T05:16:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- click_pay_button -->
-        <test-method status="FAIL" signature="verify_prices()[pri:10, instance:com.online.sanitySuite.TestCase_2_Fabhotels@19cbee5]" name="verify_prices" duration-ms="3381" started-at="2018-07-14T13:03:34Z" finished-at="2018-07-14T13:03:37Z">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [1511] but found [1511]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [1511] but found [1511]
-	at org.testng.Assert.fail(Assert.java:93)
-	at org.testng.Assert.failNotEquals(Assert.java:512)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:134)
-	at org.testng.Assert.assertEquals(Assert.java:115)
-	at org.testng.Assert.assertEquals(Assert.java:178)
-	at com.online.sanitySuite.TestCase_2_Fabhotels.verify_prices(TestCase_2_Fabhotels.java:160)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:744)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
-	at org.testng.TestNG.runSuites(TestNG.java:1144)
-	at org.testng.TestNG.run(TestNG.java:1115)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method status="PASS" signature="verify_prices()[pri:10, instance:com.online.sanitySuite.TestCase_2_Fabhotels@19cbee5]" name="verify_prices" duration-ms="8551" started-at="2018-07-15T05:16:06Z" finished-at="2018-07-15T05:16:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_prices -->
-        <test-method status="FAIL" signature="tearDown()[pri:0, instance:com.online.sanitySuite.TestCase_2_Fabhotels@19cbee5]" name="tearDown" is-config="true" duration-ms="14114" started-at="2018-07-14T13:03:37Z" finished-at="2018-07-14T13:03:51Z">
-          <exception class="org.openqa.selenium.remote.UnreachableBrowserException">
-            <message>
-              <![CDATA[Error communicating with the remote browser. It may have died.
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'COSMOS-PC', ip: '192.168.0.7', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_171'
-Driver info: driver.version: RemoteWebDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91), userDataDir=C:\Users\Cosmos\AppData\Local\Temp\scoped_dir4316_20115}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=67.0.3396.99, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
-Session ID: 59dc031410a88a66ec993a5c447ada74]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'COSMOS-PC', ip: '192.168.0.7', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_171'
-Driver info: driver.version: RemoteWebDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91), userDataDir=C:\Users\Cosmos\AppData\Local\Temp\scoped_dir4316_20115}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=67.0.3396.99, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
-Session ID: 59dc031410a88a66ec993a5c447ada74
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:694)
-	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:533)
-	at com.online.sanitySuite.TestBase.quitDriver(TestBase.java:254)
-	at com.online.sanitySuite.TestCase_2_Fabhotels.tearDown(TestCase_2_Fabhotels.java:169)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:212)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:744)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
-	at org.testng.TestNG.runSuites(TestNG.java:1144)
-	at org.testng.TestNG.run(TestNG.java:1115)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: java.lang.RuntimeException: Process refused to die after 10 seconds, and couldn't taskkill it: Timeout waiting for process to die
-	at org.openqa.selenium.os.ProcessUtils.killWinProcess(ProcessUtils.java:133)
-	at org.openqa.selenium.os.ProcessUtils.killProcess(ProcessUtils.java:81)
-	at org.openqa.selenium.os.UnixProcess$SeleniumWatchDog.destroyHarder(UnixProcess.java:246)
-	at org.openqa.selenium.os.UnixProcess$SeleniumWatchDog.access$200(UnixProcess.java:200)
-	at org.openqa.selenium.os.UnixProcess.destroy(UnixProcess.java:126)
-	at org.openqa.selenium.os.CommandLine.destroy(CommandLine.java:153)
-	at org.openqa.selenium.remote.service.DriverService.stop(DriverService.java:221)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:94)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
-	... 29 more
-Caused by: org.openqa.selenium.os.ProcessUtils$ProcessStillAliveException: Timeout waiting for process to die
-	at org.openqa.selenium.os.ProcessUtils.waitForProcessDeath(ProcessUtils.java:67)
-	at org.openqa.selenium.os.ProcessUtils.killWinProcess(ProcessUtils.java:129)
-	... 37 more
-Caused by: java.lang.InterruptedException
-	at java.lang.ProcessImpl.waitFor(Unknown Source)
-	at org.openqa.selenium.os.ProcessUtils$ProcessWaiter.run(ProcessUtils.java:154)
-	at java.lang.Thread.run(Unknown Source)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.remote.UnreachableBrowserException -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.online.sanitySuite.TestCase_2_Fabhotels@19cbee5]" name="tearDown" is-config="true" duration-ms="2474" started-at="2018-07-15T05:16:14Z" finished-at="2018-07-15T05:16:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

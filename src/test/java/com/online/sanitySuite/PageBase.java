@@ -21,6 +21,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.text.DateFormatSymbols;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
@@ -564,6 +565,15 @@ public class PageBase {
 		}
 		
 		
+		String getMonthForInt(int m) {
+		    String month = "invalid";
+		    DateFormatSymbols dfs = new DateFormatSymbols();
+		    String[] months = dfs.getMonths();
+		    if (m >= 0 && m <= 11 ) {
+		        month = months[m];
+		    }
+		    return month;
+		}
 		public java.lang.String removeLeadingZeros( java.lang.String str ){
 			if (str == null){
 				return null;}

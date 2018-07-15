@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Default_suite">
-              <span class="suite-name border-failed">Default suite</span>
+              <span class="suite-name border-passed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\Cosmos\AppData\Local\Temp\testng-eclipse-1936375990\testng-customsuite.xml</span>
+                    <span>C:\Users\Cosmos\AppData\Local\Temp\testng-eclipse--504021918\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,21 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">10 methods, 1 failed,   9 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
-                    </span>
-                    <div class="method-list-content failed suite-Default_suite">
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.online.sanitySuite.TestCase_2_Fabhotels" hash-for-method="verify_prices">verify_prices</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Default_suite -->
+                    <span class="method-stats">10 methods,   10 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -159,6 +145,11 @@
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.online.sanitySuite.TestCase_2_Fabhotels" hash-for-method="verify_date_format">verify_date_format</a> <!-- method navigator-link -->
                       </span>
                       <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.online.sanitySuite.TestCase_2_Fabhotels" hash-for-method="verify_prices">verify_prices</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
                   </li>
                 </ul>
@@ -171,55 +162,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">com.online.sanitySuite.TestCase_2_Fabhotels</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="verify_prices">
-                  </a> <!-- verify_prices -->
-                  <span class="method-name">verify_prices</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [1511] but found [1511]
-	at org.testng.Assert.fail(Assert.java:93)
-	at org.testng.Assert.failNotEquals(Assert.java:512)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:134)
-	at org.testng.Assert.assertEquals(Assert.java:115)
-	at org.testng.Assert.assertEquals(Assert.java:178)
-	at com.online.sanitySuite.TestCase_2_Fabhotels.verify_prices(TestCase_2_Fabhotels.java:160)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:744)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
-	at org.testng.TestNG.runSuites(TestNG.java:1144)
-	at org.testng.TestNG.run(TestNG.java:1115)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-failed -->
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -289,12 +231,19 @@
                   <span class="method-name">verify_date_format</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verify_prices">
+                  </a> <!-- verify_prices -->
+                  <span class="method-name">verify_prices</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Default_suite-class-passed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Cosmos\AppData\Local\Temp\testng-eclipse-1936375990\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Cosmos\AppData\Local\Temp\testng-eclipse--504021918\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -347,43 +296,43 @@ data.addRows(10);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'setup')
 data.setCell(0, 2, 'com.online.sanitySuite.TestCase_2_Fabhotels')
-data.setCell(0, 3, 15814);
+data.setCell(0, 3, 22456);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'select_guests')
 data.setCell(1, 2, 'com.online.sanitySuite.TestCase_2_Fabhotels')
-data.setCell(1, 3, 10254);
+data.setCell(1, 3, 22199);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'click_first_hotel_link')
+data.setCell(2, 1, 'click_select_room')
 data.setCell(2, 2, 'com.online.sanitySuite.TestCase_2_Fabhotels')
-data.setCell(2, 3, 10094);
+data.setCell(2, 3, 16782);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'enter_city')
+data.setCell(3, 1, 'click_search_button')
 data.setCell(3, 2, 'com.online.sanitySuite.TestCase_2_Fabhotels')
-data.setCell(3, 3, 8448);
+data.setCell(3, 3, 11246);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'select_date')
 data.setCell(4, 2, 'com.online.sanitySuite.TestCase_2_Fabhotels')
-data.setCell(4, 3, 7006);
+data.setCell(4, 3, 10997);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'click_search_button')
+data.setCell(5, 1, 'enter_city')
 data.setCell(5, 2, 'com.online.sanitySuite.TestCase_2_Fabhotels')
-data.setCell(5, 3, 5904);
+data.setCell(5, 3, 9394);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'verify_date_format')
+data.setCell(6, 1, 'verify_prices')
 data.setCell(6, 2, 'com.online.sanitySuite.TestCase_2_Fabhotels')
-data.setCell(6, 3, 4506);
+data.setCell(6, 3, 8551);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'click_select_room')
+data.setCell(7, 1, 'verify_date_format')
 data.setCell(7, 2, 'com.online.sanitySuite.TestCase_2_Fabhotels')
-data.setCell(7, 3, 3428);
+data.setCell(7, 3, 5451);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'verify_prices')
+data.setCell(8, 1, 'click_first_hotel_link')
 data.setCell(8, 2, 'com.online.sanitySuite.TestCase_2_Fabhotels')
-data.setCell(8, 3, 3381);
+data.setCell(8, 3, 4139);
 data.setCell(9, 0, 9)
 data.setCell(9, 1, 'click_pay_button')
 data.setCell(9, 2, 'com.online.sanitySuite.TestCase_2_Fabhotels')
-data.setCell(9, 3, 305);
+data.setCell(9, 3, 2478);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
@@ -421,47 +370,43 @@ return data;
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">enter_city</span>
-                <span class="method-start">15827 ms</span>
+                <span class="method-start">22474 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">select_date</span>
-                <span class="method-start">24281 ms</span>
+                <span class="method-start">31894 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verify_date_format</span>
-                <span class="method-start">31289 ms</span>
+                <span class="method-start">42928 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">click_search_button</span>
-                <span class="method-start">35797 ms</span>
+                <span class="method-start">48384 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">click_first_hotel_link</span>
-                <span class="method-start">41703 ms</span>
+                <span class="method-start">59632 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">click_select_room</span>
-                <span class="method-start">51809 ms</span>
+                <span class="method-start">63788 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">select_guests</span>
-                <span class="method-start">55241 ms</span>
+                <span class="method-start">80588 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">click_pay_button</span>
-                <span class="method-start">65496 ms</span>
+                <span class="method-start">102794 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">verify_prices</span>
-                <span class="method-start">65803 ms</span>
+                <span class="method-start">105279 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">tearDown</span>
-                <span class="method-start">69239 ms</span>
+                <span class="method-start">113840 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

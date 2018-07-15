@@ -59,13 +59,51 @@ public class TestCase_2_Fabhotels extends TestBase {
 	// webpage.iWillWaitToSee(driver.findElement(By.cssSelector("div.select-dates.select-dates-checkin.select_dates_checkin>div>svg")));
 	 webpage.clickElement(driver.findElement(By.cssSelector("div.select-dates.select-dates-checkin")));
 	 webpage.delay();
-	 webpage.clickElement(driver.findElement(By.cssSelector("td.today.day")));
+	 
+	 String date=webpage.getdatefromcurrent(0,"MM/dd/yy"); 
+	 String month=webpage.getmonthfromcurrent(0,"MM/dd/yy"); 
+	
+	 String month1= webpage.getMonthForInt( Integer.parseInt(webpage.getmonthfromcurrent(0,"MM/dd/yy"))-1);
+	 String text=webpage.getTextForElement(driver.findElement(By.xpath("//div[1]/table/thead/tr[2]/th[@class='datepicker-switch']")));
+	 String[] text1=text.split("//s");
+	 
+	 if(text.contains(month1)){
+		 if(driver.findElement(By.xpath("//td[@class='today day']")).getText().equals(date)){
+			 webpage.clickElement(driver.findElement(By.xpath("//td[@class='today day']")));
+		 }else{
+		webpage.clickSingleElementFromList(By.xpath("//td[@class='day']"), date);}
+	}else{
+		while(!driver.findElement(By.xpath("//div[1]/table/thead/tr[2]/th[@class='datepicker-switch']")).getText().contains(month1)){
+			webpage.clickElement(driver.findElement(By.xpath("//div[1]/table/thead/tr[2]/th[@class='next']")));
+		}
+		webpage.clickSingleElementFromList(By.xpath("//td[@class='day']"), date);
+	}
+		 
+	 
 	 webpage.delay();
-	 String date=webpage.getTextForElement(driver.findElement(By.xpath("//td[contains(@class,'today selected range-start day')]")));
-	 int new_date=Integer.parseInt(date)+1;
-	 webpage.delay();
-	 webpage.iWillWaitToSee(driver.findElement(By.xpath("//*[@class='day' and text()='"+new_date+"' and not(contains(@class,'disabled'))]")));
-	 webpage.clickElement(driver.findElement(By.xpath("//*[@class='day' and text()='"+new_date+"' and not(contains(@class,'disabled'))]")));
+	 String date1=webpage.getdatefromcurrent(-2,"MM/dd/yy"); 
+	 String month3=webpage.getmonthfromcurrent(-2,"MM/dd/yy"); 
+	
+	 String month4= webpage.getMonthForInt( Integer.parseInt(webpage.getmonthfromcurrent(-2,"MM/dd/yy"))-1);
+	 String text2=webpage.getTextForElement(driver.findElement(By.xpath("//div[1]/table/thead/tr[2]/th[@class='datepicker-switch']")));
+	 String[] text3=text2.split("//s");
+	 
+	 if(text2.contains(month4)){
+		webpage.clickSingleElementFromList(By.xpath("//td[@class='day']"), date1);}
+		else{
+		while(!driver.findElement(By.xpath("//div[1]/table/thead/tr[2]/th[@class='datepicker-switch']")).getText().contains(month4)){
+			webpage.clickElement(driver.findElement(By.xpath("//div[1]/table/thead/tr[2]/th[@class='next']")));
+		}
+		webpage.clickSingleElementFromList(By.xpath("//td[@class='day']"), date1);
+	}
+	 	
+//	 webpage.clickElement(driver.findElement(By.cssSelector("td.today.day")));
+//	 webpage.delay();
+//	 String date=webpage.getTextForElement(driver.findElement(By.xpath("//td[contains(@class,'today selected range-start day')]")));
+//	 int new_date=Integer.parseInt(date)+1;
+//	 webpage.delay();
+//	 webpage.iWillWaitToSee(driver.findElement(By.xpath("//*[@class='day' and text()='"+new_date+"' and not(contains(@class,'disabled'))]")));
+//	 webpage.clickElement(driver.findElement(By.xpath("//*[@class='day' and text()='"+new_date+"' and not(contains(@class,'disabled'))]")));
  }
  
  @Test(priority=4)
@@ -157,7 +195,7 @@ public class TestCase_2_Fabhotels extends TestBase {
 	 Assert.assertEquals(PromoCutPrices, HotelCutPrices1);
 	 Assert.assertEquals(SavePrice1, Saving_Amount);
 	 Assert.assertEquals(RoomPrice1, Discount_price);
-	 Assert.assertEquals(Integer.parseInt(PromoTotalPrices)-Integer.parseInt(Coupon_Discount), Discount_price);
+	 Assert.assertEquals(String.valueOf(Integer.parseInt(PromoTotalPrices)-Integer.parseInt(Coupon_Discount)), Discount_price);
 	 int value=Integer.parseInt(PromoTotalPrices)-Integer.parseInt(Coupon_Discount)+Integer.parseInt(Tax_Promo);
 	 Assert.assertEquals(String.valueOf(value).trim() , Payalble_Amount.trim());
 	

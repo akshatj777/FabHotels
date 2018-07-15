@@ -21,6 +21,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.text.DateFormatSymbols;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
@@ -459,7 +460,9 @@ public class WebPageBase {
 		
 		public void clickSingleElementFromList(By locator, String text) {
 		    List <WebElement> element = driver.findElements(locator);
+		    System.out.println(element);
 		    for(WebElement ele: element) {
+		    	System.out.println(ele.getText());
 		    	if (ele.getText().trim().equals(text)) {
 		    		ele.click();
 		    		break;
@@ -564,6 +567,7 @@ public class WebPageBase {
 		}
 		
 		
+		
 		public java.lang.String removeLeadingZeros( java.lang.String str ){
 			if (str == null){
 				return null;}
@@ -641,6 +645,15 @@ public class WebPageBase {
 	    return name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
 		}
 
+		String getMonthForInt(int m) {
+		    String month = "invalid";
+		    DateFormatSymbols dfs = new DateFormatSymbols();
+		    String[] months = dfs.getMonths();
+		    if (m >= 0 && m <= 11 ) {
+		        month = months[m];
+		    }
+		    return month;
+		}
 		
 		
 		public String getPropertyValue(String PropertyKey,String file){
