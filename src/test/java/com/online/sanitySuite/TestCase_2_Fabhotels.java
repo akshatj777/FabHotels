@@ -48,7 +48,7 @@ public class TestCase_2_Fabhotels extends TestBase {
 	 webpage.clickElement(driver.findElement(By.xpath("//*[@id='autocomplete-location']")));
 	 webpage.iFillInText(driver.findElement(By.xpath("//*[@id='autocomplete-location']")),"Bangalore, Karnataka, India");
 	 webpage.longDelay();
-	 webpage.clickElement(driver.findElement(By.cssSelector("svg.icon.search-icon")));
+	 webpage.clickSingleElementFromList(By.xpath("//div[@class='pac-item']"), "Bangalore, Karnataka, India");
 	 webpage.delay();
 
 }
@@ -130,6 +130,8 @@ public class TestCase_2_Fabhotels extends TestBase {
 	    	break;
 	    	}
 	    webpage.switchToNewWindow();
+	    driver.manage().timeouts().pageLoadTimeout(240, TimeUnit.SECONDS);
+	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	    webpage.longDelay();
 	}
  
@@ -139,17 +141,21 @@ public class TestCase_2_Fabhotels extends TestBase {
 	 webpage.iWillWaitToSee(driver.findElement(By.xpath("//div[contains(@class,'hotel_info_container')]/div/following-sibling::button[contains(@class,'select_room_button')]")));
 	 webpage.clickElement(driver.findElement(By.xpath("//div[contains(@class,'hotel_info_container')]/div/following-sibling::button[contains(@class,'select_room_button')]")));
 	 driver.manage().timeouts().pageLoadTimeout(240, TimeUnit.SECONDS);
+	 webpage.longDelay();
 	}
  
  @Test(priority=8)
  public void select_guests() throws ParseException, java.text.ParseException{
 	 WebPageBase webpage=new WebPageBase(driver);
 	 webpage.longDelay();
-	
-		 webpage.iWillWaitToSee(driver.findElement(By.cssSelector("button.select_room_type")));
-	     webpage.clickElement(driver.findElement(By.cssSelector("button.select_room_type")));
-		
+	 webpage.iWillWaitToSee(driver.findElement(By.cssSelector("button.select_room_type")));
+	 webpage.clickElement(driver.findElement(By.cssSelector("button.select_room_type")));
 	 webpage.delay();
+	 if(driver.findElements(By.xpath("button.remove-room-type")).size()==0){
+		 webpage.iWillWaitToSee(driver.findElement(By.cssSelector("button.select_room_type")));
+		 webpage.clickElement(driver.findElement(By.cssSelector("button.select_room_type"))); 
+		 webpage.delay();
+	 }
 	 webpage.clickElement(driver.findElement(By.cssSelector("span.rooms_select_value")));
 	 webpage.delay();
 	 webpage.iWillWaitToSee(driver.findElement(By.xpath("//span[@class='room_select_no' and @data-value='2']")));

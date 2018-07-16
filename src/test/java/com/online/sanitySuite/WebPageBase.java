@@ -450,7 +450,7 @@ public class WebPageBase {
 			List<WebElement> listItems = driver.findElements(locator);
 			String value = null;
 			for (WebElement item : listItems) {
-				System.out.println(item.getText());
+				
 				  if (item.getText().trim().equals(text)) {
 					  value=item.getText().trim();  
 				  } 
@@ -460,9 +460,9 @@ public class WebPageBase {
 		
 		public void clickSingleElementFromList(By locator, String text) {
 		    List <WebElement> element = driver.findElements(locator);
-		    System.out.println(element);
+		    
 		    for(WebElement ele: element) {
-		    	System.out.println(ele.getText());
+		    	
 		    	if (ele.getText().trim().equals(text)) {
 		    		ele.click();
 		    		break;
@@ -586,7 +586,6 @@ public class WebPageBase {
 		public static String currentdatefrommonth(int months,String format) {
 			DateTimeFormatter dtf = DateTimeFormatter.ofPattern(format);
 			LocalDate newYork = LocalDate.now(ZoneId.of("America/New_York"));
-			System.out.println(newYork);
 			LocalDate b = newYork.minus(Period.ofMonths(months));
 			String date = dtf.format(b);
 			return date;

@@ -1,14 +1,21 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
   
-<suite name="Synerzip-TestAutomation-SanitySuite" verbose="1" parallel="false">
+<suite thread-count="1" name="Synerzip-TestAutomation-SanitySuite" annotations="JDK" parallel="tests">
 
-  <test name="Test Suite 1" preserve-order="true" verbose="4" >
+  <test name="Test Suite 1">
    <parameter name="EPSideMenuPeople" value="People"/>
     <classes>
            <class name="com.online.sanitySuite.TestCase_1_Fabhotels" />
+          
+    </classes>
+  </test>
+  
+<test name="Test Suite 2">
+   <parameter name="EPSideMenuPeople" value="People"/>
+    <classes>
+          
            <class name="com.online.sanitySuite.TestCase_2_Fabhotels" />
     </classes>
   </test>
   
-
   </suite>

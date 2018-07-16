@@ -6,7 +6,9 @@
       <class name="com.online.sanitySuite.TestCase_2_Fabhotels">
         <methods>
           <include name="tearDown"/>
+          <include name="click_pay_button"/>
           <include name="verify_prices"/>
+          <include name="select_guests"/>
         </methods>
       </class> <!-- com.online.sanitySuite.TestCase_2_Fabhotels -->
     </classes>

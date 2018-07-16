@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [Synerzip-TestAutomation-SanitySuite]" parallel="tests">
+  <test name="Test Suite 1(failed)" parallel="tests">
+    <parameter name="EPSideMenuPeople" value="People"/>
     <classes>
-      <class name="com.online.sanitySuite.TestCase_2_Fabhotels">
+      <class name="com.online.sanitySuite.TestCase_1_Fabhotels">
         <methods>
-          <include name="tearDown"/>
-          <include name="verify_prices"/>
+          <include name="click_on_first_hotel_link"/>
+          <include name="click_pay_hotel_button"/>
+          <include name="click_on_first_pagination_button"/>
+          <include name="click_on_select_room_button"/>
+          <include name="enter_coupon_code"/>
+          <include name="close_otp_pop_up"/>
+          <include name="enter_details"/>
+          <include name="setup"/>
+          <include name="verify_amount_on_all_tabs"/>
+          <include name="click_on_book_now_button"/>
+          <include name="select_checkin_checkout_date_in_date_picker_and_verify_date_format"/>
+          <include name="click_on_search_city"/>
+          <include name="click_pay_hotel_tab"/>
+          <include name="click_on_deny_on_sms_pop_up"/>
+          <include name="click_apply_button"/>
+          <include name="remove_coupon_discount"/>
+          <include name="click_pay_button"/>
+          <include name="click_on_apply_coupon"/>
+          <include name="quitdriver"/>
         </methods>
-      </class> <!-- com.online.sanitySuite.TestCase_2_Fabhotels -->
+      </class> <!-- com.online.sanitySuite.TestCase_1_Fabhotels -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Test Suite 1(failed) -->
+</suite> <!-- Failed suite [Synerzip-TestAutomation-SanitySuite] -->
